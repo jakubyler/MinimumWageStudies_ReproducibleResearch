@@ -19,6 +19,12 @@ coefs = c(NULL,)
 # 14. Wellington http://links.jstor.org/sici?sici=0022-166X%28199124%2926%3A1%3C27%3AEOTMWO%3E2.0.CO%3B2-5&origin=JSTOR-pdf
 # 15. Klerman NONE
 
+# https://davidcard.berkeley.edu/papers/ts-min-wage.pdf
+# https://www.nber.org/system/files/working_papers/w12663/w12663.pdf
+# http://jhr.uwpress.org/content/51/2/500.abstract
+# https://journals.sagepub.com/doi/pdf/10.1177/00197939140670S307
+# https://journals.sagepub.com/doi/pdf/10.1177/0022185608090003
+# https://academic.oup.com/jeea/article-abstract/2/1/67/2280830
 
 
 df = data.frame(lp,author,date, coefs)
