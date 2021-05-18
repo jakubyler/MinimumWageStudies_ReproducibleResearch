@@ -1,7 +1,20 @@
 lp = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
 date = c(1970,1976,1976,1976,1977,1979,1980,1981,1981,1981,1983,1981,1985,1991,1992)
 author = c('Kaitz','Mincer','Gramlich','Welch','Ragan','Wachter&Kim','Iden','Ragan','Abowd&Killingsworth','Betsey&Dunson','Brown','Hammermesh','Solon','Wellington','Klerman')
-coefs = c(NULL,)
+
+t = c(2.3,2.41, 1.41, 2.22, 1.52, 2.17, 4.43, 1.70, 1.04, 2.12, 1.92, 1.63, 2.78, 1.41, 0.45)
+deg_of_freedom = c(49,58,106, 53,31,56,93,54,95,93,92,94,86,114,123)
+
+coefs = c(0.098,0.231,0.094,0.178,0.065 ,0.2519,0.226,0.052,0.213, 0.139,0.096,0.121,0.098,0.066,0.052)
+
+df = data.frame(lp,author,date, t, deg_of_freedom, coefs)
+df$error = df$coefs/df$t
+
+# 1. Dodaj 3 nowe papery
+# 2. Zobacz czy jest wszystko co potrzebne dla tych starych
+# 3. Jak to zrobisz to można analizę zacząć
+
+
 
 # 1. Kaitz https://fraser.stlouisfed.org/files/docs/publications/bls/bls_1657_1970.pdf
 # 2. Mincer https://www.nber.org/system/files/working_papers/w0039/w0039.pdf
@@ -20,11 +33,13 @@ coefs = c(NULL,)
 # 15. Klerman NONE
 
 # https://davidcard.berkeley.edu/papers/ts-min-wage.pdf
+
+# The t-ratio is the estimate divided by the standard error. With a large enough sample, t-ratios greater than 1.96 (in absolute value) suggest 
+# that your coefficient is statistically significantly different from 0 at the 95% confidence level. A threshold of 1.645 is used for 90% confidence.
+
+# https://davidcard.berkeley.edu/papers/ts-min-wage.pdf
 # https://www.nber.org/system/files/working_papers/w12663/w12663.pdf
 # http://jhr.uwpress.org/content/51/2/500.abstract
 # https://journals.sagepub.com/doi/pdf/10.1177/00197939140670S307
 # https://journals.sagepub.com/doi/pdf/10.1177/0022185608090003
 # https://academic.oup.com/jeea/article-abstract/2/1/67/2280830
-
-
-df = data.frame(lp,author,date, coefs)
