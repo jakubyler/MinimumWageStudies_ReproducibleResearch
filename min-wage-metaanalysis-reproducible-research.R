@@ -9,38 +9,22 @@ deg_of_freedom = c(49,58,106, 53,31,56,93,54,95,93,92,94,86,114,123)
 
 coefs = c(0.098,0.231,0.094,0.178,0.065 ,0.2519,0.226,0.052,0.213, 0.139,0.096,0.121,0.098,0.066,0.052)
 
-teen_subsample = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
+teen_subsample = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA) # 4
 
-log_spec = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
+log_spec = c(0,0,1,1,1,1,0,1,1,0,1,1,1,1,1) # 11
 
-no_exp_var = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
+no_exp_var = c(10,5,17,6,8,11,10,9,8,10,11,5,17,17,NA) #
 
-autoreg_correction = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
+autoreg_correction = c(0,1,1,0,1,0,1,1,0,1,0,0,1,1,NA) # 10
 
 df = data.frame(lp,author,date, t, deg_of_freedom, coefs, teen_subsample, log_spec, no_exp_var, autoreg_correction)
 df$error = df$coefs/df$t
+df$sqrt_df = df$deg_of_freedom**0.5
+df$l_sqrt_df = log(df$sqrt_df)
 
-# 1. Dodaj 3 nowe papery
-# 2. Zobacz czy jest wszystko co potrzebne dla tych starych
-# 3. Jak to zrobisz to można analizę zacząć
+mean(df$l_sqrt_df)
+mean(df$no_exp_var)
 
-
-
-# 1. Kaitz https://fraser.stlouisfed.org/files/docs/publications/bls/bls_1657_1970.pdf
-# 2. Mincer https://www.nber.org/system/files/working_papers/w0039/w0039.pdf
-# 3. Gramlich https://www.brookings.edu/wp-content/uploads/1976/06/1976b_bpea_gramlich_flanagan_wachter.pdf
-# 4. Welch https://www.rand.org/pubs/papers/P5145.html
-# 5. Ragan 1977 http://links.jstor.org/sici?sici=0034-6535%28197705%2959%3A2%3C129%3AMWATYL%3E2.0.CO%3B2-X&origin=JSTOR-pdf
-# 6. Wachter&Kim https://papers.ssrn.com/sol3/papers.cfm?abstract_id=261237
-# 7. Iden NONE
-# 8. Ragan https://www.jstor.org/stable/1928808?seq=1
-# 9. Abowd&Killingsworth NONE
-# 10. Betsey&Dunson https://www.jstor.org/stable/1815749?seq=1
-# 11. Brown http://links.jstor.org/sici?sici=0022-166X%28198324%2918%3A1%3C3%3ATEOTEO%3E2.0.CO%3B2-Q&origin=JSTOR-pdf
-# 12. Hammermesh https://www.nber.org/system/files/working_papers/w0656/w0656.pdf
-# 13. Solon http://links.jstor.org/sici?sici=0022-166X%28198521%2920%3A2%3C292%3ATMWATE%3E2.0.CO%3B2-8&origin=JSTOR-pdf
-# 14. Wellington http://links.jstor.org/sici?sici=0022-166X%28199124%2926%3A1%3C27%3AEOTMWO%3E2.0.CO%3B2-5&origin=JSTOR-pdf
-# 15. Klerman NONE
 
 # https://davidcard.berkeley.edu/papers/ts-min-wage.pdf
 
@@ -53,3 +37,28 @@ df$error = df$coefs/df$t
 # https://journals.sagepub.com/doi/pdf/10.1177/00197939140670S307
 # https://journals.sagepub.com/doi/pdf/10.1177/0022185608090003
 # https://academic.oup.com/jeea/article-abstract/2/1/67/2280830
+
+
+# 1. Kaitz https://fraser.stlouisfed.org/files/docs/publications/bls/bls_1657_1970.pdf
+# 2. Mincer https://www.nber.org/system/files/working_papers/w0039/w0039.pdf
+# 3. Gramlich https://www.brookings.edu/wp-content/uploads/1976/06/1976b_bpea_gramlich_flanagan_wachter.pdf
+# 4. Welch https://www.rand.org/pubs/papers/P5145.html
+# 5. Ragan 1977 https://www-1jstor-1org-1000094gq0c32.han.buw.uw.edu.pl/stable/pdf/1928808.pdf?ab_segments=0%2FSYC-5878%2Fcontrol&refreqid=fastly-default%3A60db1cbe71812ef62043c2e97a1b7e44
+# 6. Wachter&Kim https://papers.ssrn.com/sol3/papers.cfm?abstract_id=261237
+# 7. Iden NONE
+# 8. Ragan 
+# 9. Abowd&Killingsworth NONE
+# 10. Betsey&Dunson https://www-1jstor-1org-1000094gq0b71.han.buw.uw.edu.pl/stable/pdf/1815749.pdf?ab_segments=0%2FSYC-5878%2Fafter3&refreqid=fastly-default%3A59e107af2ecff315356162f7dc2a99fd
+# 11. Brown http://links.jstor.org/sici?sici=0022-166X%28198324%2918%3A1%3C3%3ATEOTEO%3E2.0.CO%3B2-Q&origin=JSTOR-pdf
+# 12. Hammermesh https://www.nber.org/system/files/working_papers/w0656/w0656.pdf
+# 13. Solon https://www-1jstor-1org-1000094gq0b71.han.buw.uw.edu.pl/stable/pdf/146014.pdf?ab_segments=0%2FSYC-5878%2Fafter3&refreqid=fastly-default%3Adf3c9166c54a5e763efbb31b908ee14e
+# 14. Wellington https://www-1jstor-1org-1000094gq0b71.han.buw.uw.edu.pl/stable/pdf/145715.pdf?ab_segments=0%2FSYC-5878%2Fafter3&refreqid=fastly-default%3Ab2a82b10b5243be2c4394960ee94a58d
+# 15. Klerman NONE
+
+
+
+
+
+
+
+
