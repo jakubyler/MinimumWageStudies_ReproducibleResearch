@@ -1,3 +1,5 @@
+library(tidyverse)
+
 lp = c(1,2,3,4,5,6,7,8,9,10,11,12,13,14,15)
 date = c(1970,1976,1976,1976,1977,1979,1980,1981,1981,1981,1983,1981,1985,1991,1992)
 author = c('Kaitz','Mincer','Gramlich','Welch','Ragan','Wachter&Kim','Iden','Ragan','Abowd&Killingsworth','Betsey&Dunson','Brown','Hammermesh','Solon','Wellington','Klerman')
@@ -7,7 +9,15 @@ deg_of_freedom = c(49,58,106, 53,31,56,93,54,95,93,92,94,86,114,123)
 
 coefs = c(0.098,0.231,0.094,0.178,0.065 ,0.2519,0.226,0.052,0.213, 0.139,0.096,0.121,0.098,0.066,0.052)
 
-df = data.frame(lp,author,date, t, deg_of_freedom, coefs)
+teen_subsample = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
+
+log_spec = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
+
+no_exp_var = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
+
+autoreg_correction = c(NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA)
+
+df = data.frame(lp,author,date, t, deg_of_freedom, coefs, teen_subsample, log_spec, no_exp_var, autoreg_correction)
 df$error = df$coefs/df$t
 
 # 1. Dodaj 3 nowe papery

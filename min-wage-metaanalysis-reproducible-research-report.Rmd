@@ -1,0 +1,72 @@
+---
+output:
+  pdf_document:
+indent: true
+linkcolor: blue
+linestretch: 1.5
+classoption: twocolumn
+link-citations: yes
+bibliography: min-wage-metaanalysis-reproducible-research-bib.bib
+header-includes:
+ - \usepackage[bottom]{footmisc}
+ - \usepackage{parskip}
+ - \usepackage{cuted}
+ - \setlength\columnsep{3em}
+---
+
+\begin{strip}
+  \vspace*{\dimexpr-\baselineskip-\stripsep\relax}
+  \centering
+  \begin{Huge}
+  
+  Minimum Wage Studies Meta-Analysis
+  
+  \end{Huge}
+  
+  \vskip\baselineskip
+  
+  Byler J., Korzeń K.
+  
+  \vskip\baselineskip
+  
+  \begin{singlespace}
+  
+  University of Warsaw, Faculty of Economic Sciences
+  
+  May, 2021
+  
+  \end{singlespace}
+
+  \vskip\baselineskip
+\noindent\makebox[\textwidth]{\rule{1.1\paperwidth}{0.4pt}}
+  \vskip\baselineskip
+\end{strip}
+
+# Introduction
+
+# Previous Meta-Analysis
+
+Reproduce the obtained results using the reported sample of studies.
+
+# Extended Meta-Analysis
+
+Add 2-5 newer studies, preferably using the selection process reported in the original study.
+
+Replicate the results with the extended sample.
+
+# Results
+
+Present your findings and discuss them.
+
+# Conclusion
+
+# References
+
+\setlength{\parindent}{-0.2in}
+\setlength{\leftskip}{0.2in}
+\setlength{\parskip}{8pt}
+\noindent
+
+---
+nocite: '@*'
+---
