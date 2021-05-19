@@ -8,12 +8,12 @@ The exercise is considered as assignment for Reproducible Research, second year 
 ## Acknowledgements
 
  - Coordinator [Wojciech Hardy](wojciechhardy@uw.edu.pl)
- - `README.md` prepared using [readme.so](readme.so)
+ - The `README.md` was prepared using [readme.so](readme.so)
 
 ## Authors
 
-- [Jakub Byler](https://github.com/jakubyler), j.byler@student.uw.edu.pl
-- [Kamil Korzeń](https://github.com/jakubyler), k.korzen@student.uw.edu.pl
+- [Jakub Byler](j.byler@student.uw.edu.pl)
+- [Kamil Korzeń](k.korzen@student.uw.edu.pl)
 
 ## Requirements
 
