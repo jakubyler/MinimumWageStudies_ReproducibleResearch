@@ -19,7 +19,7 @@ header-includes:
   \centering
   \begin{Huge}
   
-  Minimum Wage Studies Meta-Analysis
+  Time Series Minimum Wage Studies Meta-Analysis
   
   \end{Huge}
   
@@ -29,24 +29,42 @@ header-includes:
   
   \vskip\baselineskip
   
-  \begin{singlespace}
-  
   University of Warsaw, Faculty of Economic Sciences
   
   May, 2021
-  
-  \end{singlespace}
 
   \vskip\baselineskip
 \noindent\makebox[\textwidth]{\rule{1.1\paperwidth}{0.4pt}}
   \vskip\baselineskip
 \end{strip}
 
+```{r, include = F}
+load('mw-working-directory.Rdata')
+library(tidyverse)
+```
+
 # Introduction
+
+The effect of minimum wage on the employment and especially on the employment among teenagers is a well-known research problem that was addressed multiple times in the past. Conducted studies usually refer to a negative impact of minimum wage increase on the employment rate. In other words, the coefficient for minimum wage as an independent variable is negative, when the dependent variable considered is the unemployment rate. 
+
+There are numerous ways on how to examine this relationship. Among papers related to this problem, we found evidence of panel data models, cross-sectional data models as well as aggregated time series data models. Although the majority of researchers consider only the United States data, we found examples of different regions such as European or Asian countries analysed as well.
+
+We believe that reproducing results obtained by other researchers is a crucial part of science, especially when it comes to conclusions of that importance. Therefore, the main goal of this research paper is two-fold. First, we aim to reproduce the results of a well-known meta-analysis conducted in the late 1990s by @card1995time. In the aforementioned paper, authors examined 15 studies on this topic and drew multiple conclusions considering the quality of the cited studies. Moreover, authors put an emphasis on the problem of *publication bias*, while conducting their own research. When it comes to meta-research, the obtained and aggregated results, such as coefficients are not the most important factors. In this type of research, authors usually look for various biases that could lead to wrong conclusions, which were later replicated over time by other scientists. After reproducing the results obtained by Card and Krueger, we aim to further enhance the analysis by adding additional papers, especially focusing on these, which were published later than the meta-analysis we reproduce. This is important considering the fact that in the original meta-analysis authors claimed that the sample size can have a substantial effect on the t-statistics obtained by the researchers. With research papers published later, the probability of a higher sample is naturally greater.
+
+The next section presents the process of reproducing the meta-analysis done by Card and Krueger. Then we enrich the analysis with two additional papers and present the obtained results. Last section concludes.
 
 # Previous Meta-Analysis
 
-Reproduce the obtained results using the reported sample of studies.
+Original paper that we aim to reproduce was published in 1995. In the past, more than 25 years ago, reproducibility was not considered such an important topic as it is today. Although the authors presented a reliable meta-analysis, they did not include the original data such as *t-statistics* in their research. We not only reproduce the obtained results in a form of replicating the modeling and visualization process, but we need to look for the required information in original papers or in other meta-analyses. Two research papers were especially helpful. One has explored the older studies [@brown1982effect], while the other was aggregating newly published research papers as well [@neumark2006minimum]. 
+
+For the purpose of reproducibility, we have gathered the information of all 15 papers analysed in the original meta-analysis. Our dataset consists of the author(s), date of publication (`year`), *t-statistic* in absolute terms^[All considered t-statistics are negative.] (`t_stat`), *degrees of freedom* (`df`), coefficient of the minimum wage variable in absolute terms^[All considered coefficients are negative.] (`coef`), number of explanatory variables of the model (`no_exp_var`), the error of the model (`error`) and two dummy variables. One binary variable is set to 1, when there was a logarithmic specification of the model (`log_spec`) and the second one is set to 1, when the autoregression correction was applied (`autoreg_correction`). We additionally calculate the square roots of `df` and the natural logarithm of the square root of `df` as in the original research paper, and name these variables `sqrt_df` and `l_sqrt_df`, respectively. Due to lack of sufficient information from the original meta-analysis authors, we lack the binary variable indicating whether the model had taken the subsample of teenagers, rather than the total population. We had gathered the information for all research papers considered but one. In result, we are missing one datapoint, which is the number of explanatory variables for Klerman’s study published in 1992.
+
+Card and Krueger originally looked at earlier meta-research, similarly as we are. They extended the previous study by an additional three papers. Looking for a direct specification of the models, rather than just for the coefficient is an exceptional effort. Most studies either show only the narrow results or they are impossible to find in an open source research aggregators such as e.g. JSTOR. Nevertheless, we have managed to find the details for two papers published after the Card and Krueger publication in 1995. To be more precise, we will enrich our analysis by adding paper by @bernstein2000impact as well as by @bazen2002looking. We have also looked for information on detailed model specification in other papers such as @williams2001minimum but we were unable to find sufficient information to support the analysis.
+
+```{r, warning = F, message = F, echo = F, fig.align = 'center'}
+fig_1
+```
+
 
 # Extended Meta-Analysis
 
@@ -54,11 +72,11 @@ Add 2-5 newer studies, preferably using the selection process reported in the or
 
 Replicate the results with the extended sample.
 
-# Results
-
 Present your findings and discuss them.
 
 # Conclusion
+
+Lorem Ipsum sit dolor amet
 
 # References
 
