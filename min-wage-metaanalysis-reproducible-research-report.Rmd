@@ -86,10 +86,13 @@ Note: Presented sample is the one analysed by Card and Krueger. The fitted regre
   \end{scriptsize}
   \end{singlespace}
 
-
-We present the reproduced regressions in Table 1, in Appendix.
+We present the reproduced regressions in Table 1, in the Appendix. Additionally, on Table 3, 5 and 7 model specifications fitted on subsets of dataset are presented accordingly to original paper methodology. Table 3 presents the reproduced results for subset of studies with study number 7 excluded, Table 5 presents the reproduced results for subset of studies using logarithmic specification, and Table 7 presents the reproduced results for subset of studies published before year 1983
 
 # Extended Meta-Analysis
+
+The results of our reproducible research seem to be satisfying and confirm the trend observed by @card1995time. As the papers added by us to the analysis were more recent they were based on a bigger sample and therefore also the degrees of freedom have had higher values. The dependence between t-statistics and the square root of degrees of freedom is following the pattern seen in the original paper, as presented of Figure 3. The general rule in the meta-research is that the more degrees of freedom the lower is the t-statistics which is counterintuitive but goes in line with the conclusions derived from the original analysis [@card1995time].
+
+\pagebreak
 
 **\small Figure 3. Estimated t-statistics compared to Degrees of Freedom (Extended)**
 ```{r, warning = F, message = F, echo = F, fig.align = 'center'}
@@ -102,6 +105,12 @@ Note: Presented sample is the one analysed by Card and Krueger extended by two a
   \end{scriptsize}
   \end{singlespace}
 
+In order to control the potential impact of other research characteristics on this dependence, we performed regressions with the logarithm of absolute t-ratio as the dependent variable. Selected independent variables were the logarithm of the square root of degrees of freedom, a number of explanatory variables in given research, and binary variables indicating whether the model specification in given research was logarithmic and if the autoregressive correction was implemented.  This specification is similar to the one used in the original meta-analysis except we did not manage to find the information about the teenage subsample being used in all papers. We also performed regressions with these specifications for subsamples suggested in the reproduced paper [@card1995time]. First subset consists only of the papers published not later than 1982. Although we reproduced the results for the original meta-analysis, we did not include this specification in our extended analysis, as we added papers published after 1995. Second, authors fitted a regression model without the study number 7, which was considered an outlier, the original results are presented in Table 3, while our extended model is presented in Table 4. Third specification was based only on the studies with logarithmic specification. These results are presented in Table 5, while our exended models are presented in Table 6. We generally see, that the models fitted on subsets are similar and directionally in line with the ones described in the origina meta-analysis. Across all specifications, with the addition of our studies, the coeffcients are close to zero, but far from the theoretically correct values.
+
+Although our dataset is replicated as seen in the original analysis, we see that there are subtle differences in p-values and in the coefficients - especially when it comes to Intercept coefficients. This is surprising, given by the fact that we reproduced the original results and mean values for the independent variables are the same as in the original paper. We used the `lm()` function from R, to fit the regression models, and we believe that slight differences can be due to different algorithms used in the implementation of the original paper or our environment. The misalignment can be also caused by the fact that we were not able to include exactly the same data, but up to two decimals of precision due to low data availability, as mentioned multiple times in this paper. Nevertheless, for all reproduced and the extended models, coefficients for the key independent variable, which is the logarithm of the square root of degrees of freedom are negative and far from 1, which once again indicates that the selected papers suffered from the bias. For an unbiased analysis, the coefficients should be equal to 1 as the higher the degrees of freedom, the higher should be the t-statistic. Here we observe an opposite relation.
+
+Similarly, our analysis suggests the same dependence between the standard error and elasticity as in the original research [@card1995time] as seen on Figure 4. After adding studies selected by us, the positive dependence between these two statistics holds. As there should be no dependence between standard errors and the t-statistic, we can conclude that the old as well as newly added publications were biased.
+
 **\small Figure 4. Estimated Employment Elasticity compared to Standard Error Estimate (Extended)**
 ```{r, warning = F, message = F, echo = F, fig.align = 'center'}
 fig_2_new
@@ -113,15 +122,11 @@ Note: Presented sample is the one analysed by Card and Krueger extended by two a
   \end{scriptsize}
   \end{singlespace}
 
-Add 2-5 newer studies, preferably using the selection process reported in the original study.
-
-Replicate the results with the extended sample.
-
-Present your findings and discuss them.
-
 # Conclusion
 
-Lorem Ipsum sit dolor amet
+The results of our research are in line with those achieved in the original meta-analysis done by @card1995time, where authors suggest that these counterintuitive results are caused by the fact that in the beginning, when the available data was not that vast the researchers used specifications that allowed them to find a significant negative relationship between minimum wage and youth employment that they expected. However, as it was fragile the significance decreased with more data being used. The papers added by us confirmed that this research-biasing trend is vital and still present and for the papers published later than the 15 papers Card and Krueger looked at, with even bigger data samples the t-ratios were even lower.
+
+To conclude, there is strong evidence that research is often biased. A lack of self-awareness and an over-trust in available literature can be misleading. Researchers, who trust biased science could perform analyses that might have low scientific value due to bias rooted in the predecessors’ work.
 
 \onecolumn
 
@@ -160,6 +165,107 @@ cat(tbl2, sep = '\n')
 \begin{singlespace}
 \begin{scriptsize}
 Note: The sample used to estimate regression models is the same as in original meta-analysis by Card and Krueger extended by two additional studies published after the publication of the original meta-analysis. The binary variable for teenager sub-sample was removed, due to lack of information available to authors.
+  \end{scriptsize}
+  \end{singlespace}
+
+\pagebreak
+
+**\small Table 3. Regression Models for the Logarithm of Absolute t-statistics of Minimum Wage Emplyoment Effect (Subset 2: Study 7 excluded)**
+
+```{r, include = F}
+tbl3 = stargazer(model_1_old_sub2, model_2_old_sub2, model_3_old_sub2,
+                 type = 'latex', digits = 2, header = F,
+                 font.size = 'footnotesize', no.space = TRUE)
+tbl3 = sub('^.+\\caption.+$','', tbl3)
+```
+
+```{r, echo = F, results = 'asis'}
+cat(tbl3, sep = '\n')
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: The sample used to estimate regression models is the same as in original meta-analysis by Card and Krueger. The binary variable for teenager sub-sample was removed, due to lack of information available to authors.
+  \end{scriptsize}
+  \end{singlespace}
+
+**\small Table 4. Regression Models for the Logarithm of Absolute t-statistics of Minimum Wage Emplyoment Effect (Extended) (Subset 2: Study 7 excluded)**
+
+```{r, include = F}
+tbl4 = stargazer(model_1_new_sub2, model_2_new_sub2, model_3_new_sub2,
+                 type = 'latex', digits = 2, header = F,
+                 font.size = 'footnotesize', no.space = TRUE)
+tbl4 = sub('^.+\\caption.+$','', tbl4)
+```
+
+```{r, echo = F, results = 'asis'}
+cat(tbl4, sep = '\n')
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: The sample used to estimate regression models is the same as in original meta-analysis by Card and Krueger extended by two additional studies published after the publication of the original meta-analysis. The binary variable for teenager sub-sample was removed, due to lack of information available to authors.
+  \end{scriptsize}
+  \end{singlespace}
+
+\pagebreak
+
+**\small Table 5. Regression Models for the Logarithm of Absolute t-statistics of Minimum Wage Emplyoment Effect (Subset 3: Only studies with logarithmic specification)**
+
+```{r, include = F}
+tbl5 = stargazer(model_1_old_sub3, model_2_old_sub3, model_3_old_sub3,
+                 type = 'latex', digits = 2, header = F,
+                 font.size = 'footnotesize', no.space = TRUE)
+tbl5 = sub('^.+\\caption.+$','', tbl5)
+```
+
+```{r, echo = F, results = 'asis'}
+cat(tbl5, sep = '\n')
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: The sample used to estimate regression models is the same as in original meta-analysis by Card and Krueger. The binary variable for teenager sub-sample was removed, due to lack of information available to authors.
+  \end{scriptsize}
+  \end{singlespace}
+  
+**\small Table 6. Regression Models for the Logarithm of Absolute t-statistics of Minimum Wage Emplyoment Effect (Extended) (Subset 3: Only studies with logarithmic specification)**
+
+```{r, include = F}
+tbl6 = stargazer(model_1_new_sub3, model_2_new_sub3, model_3_new_sub3,
+                 type = 'latex', digits = 2, header = F,
+                 font.size = 'footnotesize', no.space = TRUE)
+tbl6 = sub('^.+\\caption.+$','', tbl6)
+```
+
+```{r, echo = F, results = 'asis'}
+cat(tbl6, sep = '\n')
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: The sample used to estimate regression models is the same as in original meta-analysis by Card and Krueger extended by two additional studies published after the publication of the original meta-analysis. The binary variable for teenager sub-sample was removed, due to lack of information available to authors.
+  \end{scriptsize}
+  \end{singlespace}
+
+\pagebreak
+
+**\small Table 7. Regression Models for the Logarithm of Absolute t-statistics of Minimum Wage Emplyoment Effect (Subset 1: Studies published after 1982 excluded)**
+
+```{r, include = F}
+tbl7 = stargazer(model_1_old_sub1, model_2_old_sub1, model_3_old_sub1,
+                 type = 'latex', digits = 2, header = F,
+                 font.size = 'footnotesize', no.space = TRUE)
+tbl7 = sub('^.+\\caption.+$','', tbl7)
+```
+
+```{r, echo = F, results = 'asis'}
+cat(tbl7, sep = '\n')
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: The sample used to estimate regression models is the same as in original meta-analysis by Card and Krueger. The binary variable for teenager sub-sample was removed, due to lack of information available to authors.
   \end{scriptsize}
   \end{singlespace}
 

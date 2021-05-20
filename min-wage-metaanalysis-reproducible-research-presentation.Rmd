@@ -36,6 +36,8 @@ Bazen, Stephen, and Velayoudom Marimoutou. 2002. “Looking for a Needle in a Ha
 
 - we found data for all 15 papers, but failed to reproduce `teenager sub-group` binary variable, due to lack of available information
 
+- we successfully reproduced the original visualizations, general regression model specifications as well as supporting models based on subsets of original dataset
+
 ## Reproducing the Results (2/4)
 
 **\footnotesize Figure 1. Estimated t-statistics compared to Degrees of Freedom**
@@ -74,6 +76,10 @@ cat(tbl1, sep = '\n')
 
 ## Extending the Meta-Analysis (1/4)
 
+- we added two new papers published after 1995 (year of original meta-analysis publication)
+
+- results are in line with the original conclusions, and nearly are well fitted to the found biases
+
 ## Extending the Meta-Analysis (2/4)
 
 **\footnotesize Figure 3. Estimated t-statistics compared to Degrees of Freedom (Extended)**
@@ -109,5 +115,11 @@ cat(tbl2, sep = '\n')
 \tiny Note: The sample used to estimate regression models is the same as in original meta-analysis by Card and Krueger extended by two additional studies published after the publication of the original meta-analysis. The binary variable for teenager sub-sample was removed, due to lack of information available to authors.
 
 ## Conclusions
+
+- there is strong evidence that research is often biased
+
+- the over-trust in available literature can be misleading
+
+- researchers, who trust biased science could perform analyses that might have low scientific value due to bias rooted in the predecessors’ work
 
 # Thank You

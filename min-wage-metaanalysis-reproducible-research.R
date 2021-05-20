@@ -67,21 +67,52 @@ dt$l_sqrt_df = log(dt$sqrt_df)
 
 model_1_old = lm(log(t_stat) ~ l_sqrt_df,
                  data = dt[1:15,])
-
 model_2_old = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec,
                  data = dt[1:15,])
-
 model_3_old = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec + no_exp_var,
                  data = dt[1:15,])
 
 model_1_new = lm(log(t_stat) ~ l_sqrt_df,
                  data = dt)
-
 model_2_new = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec,
                  data = dt)
-
 model_3_new = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec + no_exp_var,
                  data = dt)
+
+model_1_old_sub1 = lm(log(t_stat) ~ l_sqrt_df,
+                      data = dt[1:15,] %>% filter(year <= 1982))
+model_2_old_sub1 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec,
+                      data = dt[1:15,] %>% filter(year <= 1982))
+model_3_old_sub1 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec + no_exp_var,
+                      data = dt[1:15,] %>% filter(year <= 1982))
+
+model_1_old_sub2 = lm(log(t_stat) ~ l_sqrt_df,
+                      data = dt[1:15,] %>% filter(id_num != 7))
+model_2_old_sub2 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec,
+                      data = dt[1:15,] %>% filter(id_num != 7))
+model_3_old_sub2 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec + no_exp_var,
+                      data = dt[1:15,] %>% filter(id_num != 7))
+
+model_1_new_sub2 = lm(log(t_stat) ~ l_sqrt_df,
+                      data = dt %>% filter(id_num != 7))
+model_2_new_sub2 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec,
+                      data = dt %>% filter(id_num != 7))
+model_3_new_sub2 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec + no_exp_var,
+                      data = dt %>% filter(id_num != 7))
+
+model_1_old_sub3 = lm(log(t_stat) ~ l_sqrt_df,
+                      data = dt[1:15,] %>% filter(log_spec == 1))
+model_2_old_sub3 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec,
+                      data = dt[1:15,] %>% filter(log_spec == 1))
+model_3_old_sub3 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec + no_exp_var,
+                      data = dt[1:15,] %>% filter(log_spec == 1))
+
+model_1_new_sub3 = lm(log(t_stat) ~ l_sqrt_df,
+                      data = dt %>% filter(log_spec == 1))
+model_2_new_sub3 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec,
+                      data = dt %>% filter(log_spec == 1))
+model_3_new_sub3 = lm(log(t_stat) ~ l_sqrt_df + autoreg_correction + log_spec + no_exp_var,
+                      data = dt %>% filter(log_spec == 1))
 
 # Figure 1 Old
 fig_1_old = ggplot(dt[1:15, ], aes(x = sqrt_df, y = t_stat)) +

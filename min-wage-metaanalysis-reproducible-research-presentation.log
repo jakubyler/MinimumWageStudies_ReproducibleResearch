@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.26)  20 MAY 2021 15:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.26)  20 MAY 2021 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1473,7 +1473,7 @@ mer/unnamed-chunk-2-1.pdf Graphic file (type pdf)
 <use min-wage-metaanalysis-reproducible-research-presentation_files/figure-beam
 er/unnamed-chunk-2-1.pdf>
 Package pdftex.def Info: min-wage-metaanalysis-reproducible-research-presentati
-on_files/figure-beamer/unnamed-chunk-2-1.pdf  used on input line 150.
+on_files/figure-beamer/unnamed-chunk-2-1.pdf  used on input line 154.
 (pdftex.def)             Requested size: 307.28928pt x 201.25282pt.
 [4
 
@@ -1486,14 +1486,14 @@ mer/unnamed-chunk-3-1.pdf Graphic file (type pdf)
 <use min-wage-metaanalysis-reproducible-research-presentation_files/figure-beam
 er/unnamed-chunk-3-1.pdf>
 Package pdftex.def Info: min-wage-metaanalysis-reproducible-research-presentati
-on_files/figure-beamer/unnamed-chunk-3-1.pdf  used on input line 164.
+on_files/figure-beamer/unnamed-chunk-3-1.pdf  used on input line 168.
 (pdftex.def)             Requested size: 307.28928pt x 201.25282pt.
 [5
 
  <./min-wage-metaanalysis-reproducible-research-presentation_files/figure-beame
 r/unnamed-chunk-3-1.pdf>]
 
-Package hyperref Warning: Ignoring empty anchor on input line 210.
+Package hyperref Warning: Ignoring empty anchor on input line 214.
 
 [6
 
@@ -1507,7 +1507,7 @@ mer/unnamed-chunk-6-1.pdf Graphic file (type pdf)
 <use min-wage-metaanalysis-reproducible-research-presentation_files/figure-beam
 er/unnamed-chunk-6-1.pdf>
 Package pdftex.def Info: min-wage-metaanalysis-reproducible-research-presentati
-on_files/figure-beamer/unnamed-chunk-6-1.pdf  used on input line 229.
+on_files/figure-beamer/unnamed-chunk-6-1.pdf  used on input line 242.
 (pdftex.def)             Requested size: 307.28928pt x 201.25282pt.
 [8
 
@@ -1520,14 +1520,14 @@ mer/unnamed-chunk-7-1.pdf Graphic file (type pdf)
 <use min-wage-metaanalysis-reproducible-research-presentation_files/figure-beam
 er/unnamed-chunk-7-1.pdf>
 Package pdftex.def Info: min-wage-metaanalysis-reproducible-research-presentati
-on_files/figure-beamer/unnamed-chunk-7-1.pdf  used on input line 245.
+on_files/figure-beamer/unnamed-chunk-7-1.pdf  used on input line 258.
 (pdftex.def)             Requested size: 307.28928pt x 201.25282pt.
 [9
 
  <./min-wage-metaanalysis-reproducible-research-presentation_files/figure-beame
 r/unnamed-chunk-7-1.pdf>]
 
-Package hyperref Warning: Ignoring empty anchor on input line 292.
+Package hyperref Warning: Ignoring empty anchor on input line 305.
 
 [10
 
@@ -1545,11 +1545,11 @@ Package hyperref Warning: Ignoring empty anchor on input line 292.
 \tf@snm=\write8
 \openout8 = `min-wage-metaanalysis-reproducible-research-presentation.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 300.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 300.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 324.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 324.
 (./min-wage-metaanalysis-reproducible-research-presentation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 300.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 300.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 324.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 324.
 Package rerunfilecheck Info: File `min-wage-metaanalysis-reproducible-research-
 presentation.out' has not changed.
 (rerunfilecheck)             Checksum: 180EF588FF1119BDE077E762D4BD7E4A;44.
@@ -1558,11 +1558,11 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 19514 strings out of 492616
- 369761 string characters out of 6129481
+ 19516 strings out of 492616
+ 369781 string characters out of 6129481
  470164 words of memory out of 5000000
  22916 multiletter control sequences out of 15000+600000
- 55732 words of font info for 65 fonts, out of 8000000 for 9000
+ 55841 words of font info for 66 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,11n,55p,860b,604s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc}{/usr/lo
@@ -1578,7 +1578,7 @@ texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/local/texlive/2019/texmf-dist/
 fonts/type1/public/lm/lmtt9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msam10.pfb>
 Output written on min-wage-metaanalysis-reproducible-research-presentation.pdf 
-(12 pages, 189326 bytes).
+(12 pages, 190464 bytes).
 PDF statistics:
  182 PDF objects out of 1000 (max. 8388607)
  138 compressed objects within 2 object streams
