@@ -82,7 +82,7 @@ fig_2_old
 
 \begin{singlespace}
 \begin{scriptsize}
-Note: Presented sample is the one analysed by Card and Krueger. The fitted regression line is simple linear model with 95 pct. confidence intervals.
+Note: Presented sample is the one analysed by Card and Krueger. The fitted regression line is simple linear model with 95 pct. confidence intervals. Line without confidence intervals represent the Standard Error multiplied by 2.
   \end{scriptsize}
   \end{singlespace}
 
@@ -109,7 +109,7 @@ fig_2_new
 
 \begin{singlespace}
 \begin{scriptsize}
-Note: Presented sample is the one analysed by Card and Krueger extended by two additional studies published after the publication of the original meta-analysis. The fitted regression line is simple linear model with 95 pct. confidence intervals. Blue colour indicates the studies added to the reproduced original meta-analysis by Card and Krueger.
+Note: Presented sample is the one analysed by Card and Krueger extended by two additional studies published after the publication of the original meta-analysis. The fitted regression line is simple linear model with 95 pct. confidence intervals. Line without confidence intervals represent the Standard Error multiplied by 2. Blue colour indicates the studies added to the reproduced original meta-analysis by Card and Krueger.
   \end{scriptsize}
   \end{singlespace}
 
@@ -130,7 +130,8 @@ Lorem Ipsum sit dolor amet
 **\small Table 1. Regression Models for the Logarithm of Absolute t-statistics of Minimum Wage Emplyoment Effect**
 
 ```{r, include = F}
-tbl1 = stargazer(model_1_old, model_2_old, model_3_old, type = 'latex', digits = 2, header = F)
+tbl1 = stargazer(model_1_old, model_2_old, model_3_old, type = 'latex', digits = 2, header = F,
+                 font.size = 'footnotesize', no.space = TRUE)
 tbl1 = sub('^.+\\caption.+$','', tbl1)
 ```
 
@@ -144,14 +145,11 @@ Note: The sample used to estimate regression models is the same as in original m
   \end{scriptsize}
   \end{singlespace}
 
-\twocolumn
-
-\onecolumn
-
 **\small Table 2. Regression Models for the Logarithm of Absolute t-statistics of Minimum Wage Emplyoment Effect (Extended)**
 
 ```{r, include = F}
-tbl2 = stargazer(model_1_new, model_2_new, model_3_new, type = 'latex', digits = 2, header = F)
+tbl2 = stargazer(model_1_new, model_2_new, model_3_new, type = 'latex', digits = 2, header = F,
+                 font.size = 'footnotesize', no.space = TRUE)
 tbl2 = sub('^.+\\caption.+$','', tbl2)
 ```
 

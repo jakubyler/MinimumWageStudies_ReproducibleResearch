@@ -98,6 +98,7 @@ fig_1_old = ggplot(dt[1:15, ], aes(x = sqrt_df, y = t_stat)) +
 # Figure 2 Old
 fig_2_old = ggplot(dt[1:15, ], aes(x = error, y = coef)) +
   geom_point(aes(color = as.factor(is_new))) +
+  geom_line(aes(y = 2 * error)) +
   geom_text(aes(label = id_num), hjust = -0.5, vjust = -0.5) +
   geom_smooth(method = 'lm', color = 'black') +
   labs(#title = 'Figure 2. Estimated Employment Elasticity compared to Standard Error Estimate',
@@ -122,6 +123,7 @@ fig_1_new = ggplot(dt, aes(x = sqrt_df, y = t_stat)) +
 # Figure 2 New
 fig_2_new = ggplot(dt, aes(x = error, y = coef)) +
   geom_point(aes(color = as.factor(is_new))) +
+  geom_line(aes(y = 2 * error)) +
   geom_text(aes(label = id_num), hjust = -0.5, vjust = -0.5) +
   geom_smooth(method = 'lm', color = 'black') +
   labs(#title = 'Figure 2. Estimated Employment Elasticity compared to Standard Error Estimate',

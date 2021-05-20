@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.26)  20 MAY 2021 13:56
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2020.2.26)  20 MAY 2021 14:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -736,17 +736,14 @@ reproducible-research-report_files/figure-latex/unnamed-chunk-5-1.pdf>] [4
 
 ] [5
 
-] [6
-
-
 ]
-Overfull \hbox (0.73009pt too wide) in paragraph at lines 376--379
+Overfull \hbox (0.73009pt too wide) in paragraph at lines 364--367
  \T1/lmr/m/it/10 (-20) of the Minimum Wage Study Commission \T1/lmr/m/n/10 (-20
 ) 5: 143--
  []
 
 
-Underfull \hbox (badness 2197) in paragraph at lines 407--410
+Underfull \hbox (badness 2197) in paragraph at lines 395--398
  []\T1/lmr/m/n/10 (+20) Card, David, and Alan B Krueger. 1995.
  []
 
@@ -756,31 +753,31 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
+[6
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 469.
 [7
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 481.
-[8
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 481.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 469.
 (./min-wage-metaanalysis-reproducible-research-report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 481.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 481.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 469.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 469.
 Package rerunfilecheck Info: File `min-wage-metaanalysis-reproducible-research-
 report.out' has not changed.
 (rerunfilecheck)             Checksum: 834812714EC2B8E85923BC209AABFC96;690.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 481.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 469.
  ) 
 Here is how much of TeX's memory you used:
- 12743 strings out of 492616
- 187916 string characters out of 6129481
- 299027 words of memory out of 5000000
- 16349 multiletter control sequences out of 15000+600000
- 61066 words of font info for 103 fonts, out of 8000000 for 9000
+ 12749 strings out of 492616
+ 187997 string characters out of 6129481
+ 301027 words of memory out of 5000000
+ 16351 multiletter control sequences out of 15000+600000
+ 65592 words of font info for 106 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  32i,10n,38p,971b,365s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exi
@@ -794,20 +791,21 @@ l/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rm.enc}{/usr/local/texlive/2019
 /texmf-dist/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/local/texlive/2019/texmf-dis
 t/fonts/enc/dvips/lm/lm-ec.enc}</usr/local/texlive/2019/texmf-dist/fonts/type1/
 public/lm/lmbx12.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/
-lmbx9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi10.pfb>
-</usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local
-/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/20
-19/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2019/texmf-dis
-t/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
-1/public/lm/lmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/
-lmri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy10.pfb
-></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy7.pfb></usr/loca
-l/texlive/2019/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
-Output written on min-wage-metaanalysis-reproducible-research-report.pdf (8 pag
-es, 280989 bytes).
+lmbx9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmmi8.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmr10.pfb></usr/local/
+texlive/2019/texmf-dist/fonts/type1/public/lm/lmr17.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/lm/lmr6.pfb></usr/local/texlive/2019/texmf-dist
+/fonts/type1/public/lm/lmr7.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1
+/public/lm/lmr8.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/l
+mri10.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmri8.pfb><
+/usr/local/texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy6.pfb></usr/local/
+texlive/2019/texmf-dist/fonts/type1/public/lm/lmsy8.pfb></usr/local/texlive/201
+9/texmf-dist/fonts/type1/public/lm/lmtt10.pfb>
+Output written on min-wage-metaanalysis-reproducible-research-report.pdf (7 pag
+es, 299821 bytes).
 PDF statistics:
  208 PDF objects out of 1000 (max. 8388607)
  172 compressed objects within 2 object streams
- 39 named destinations out of 1000 (max. 500000)
- 10309 words of extra memory for PDF output out of 12000 (max. 10000000)
+ 38 named destinations out of 1000 (max. 500000)
+ 12357 words of extra memory for PDF output out of 14400 (max. 10000000)
 
