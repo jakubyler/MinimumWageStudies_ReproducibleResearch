@@ -22,3 +22,5 @@ The exercise is considered as assignment for Reproducible Research, second year 
 `rmarkdown 2.8.0`
 
 `tidyverse 1.3.1`
+
+`stargazer 5.2.2`

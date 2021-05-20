@@ -41,6 +41,7 @@ header-includes:
 ```{r, include = F}
 load('mw-working-directory.Rdata')
 library(tidyverse)
+library(stargazer)
 ```
 
 # Introduction
@@ -57,16 +58,60 @@ The next section presents the process of reproducing the meta-analysis done by C
 
 Original paper that we aim to reproduce was published in 1995. In the past, more than 25 years ago, reproducibility was not considered such an important topic as it is today. Although the authors presented a reliable meta-analysis, they did not include the original data such as *t-statistics* in their research. We not only reproduce the obtained results in a form of replicating the modeling and visualization process, but we need to look for the required information in original papers or in other meta-analyses. Two research papers were especially helpful. One has explored the older studies [@brown1982effect], while the other was aggregating newly published research papers as well [@neumark2006minimum]. 
 
-For the purpose of reproducibility, we have gathered the information of all 15 papers analysed in the original meta-analysis. Our dataset consists of the author(s), date of publication (`year`), *t-statistic* in absolute terms^[All considered t-statistics are negative.] (`t_stat`), *degrees of freedom* (`df`), coefficient of the minimum wage variable in absolute terms^[All considered coefficients are negative.] (`coef`), number of explanatory variables of the model (`no_exp_var`), the error of the model (`error`) and two dummy variables. One binary variable is set to 1, when there was a logarithmic specification of the model (`log_spec`) and the second one is set to 1, when the autoregression correction was applied (`autoreg_correction`). We additionally calculate the square roots of `df` and the natural logarithm of the square root of `df` as in the original research paper, and name these variables `sqrt_df` and `l_sqrt_df`, respectively. Due to lack of sufficient information from the original meta-analysis authors, we lack the binary variable indicating whether the model had taken the subsample of teenagers, rather than the total population. We had gathered the information for all research papers considered but one. In result, we are missing one datapoint, which is the number of explanatory variables for Klerman’s study published in 1992.
+For the purpose of reproducibility, we have gathered the information of all 15 papers analysed in the original meta-analysis. Our dataset consists of the author(s), date of publication (`year`), *t-statistic* in absolute terms^[All considered t-statistics are negative.] (`t_stat`), *degrees of freedom* (`df`), coefficient of the minimum wage variable in absolute terms^[All considered coefficients are negative.] (`coef`), number of explanatory variables of the model (`no_exp_var`), the error of the model (`error`) and two dummy variables. One binary variable is set to 1, when there was a logarithmic specification of the model (`log_spec`) and the second one is set to 1, when the autoregression correction was applied (`autoreg_correction`). We additionally calculate the square roots of `df` and the natural logarithm of the square root of `df` as in the original research paper, and name these variables `sqrt_df` and `l_sqrt_df`, respectively. Due to lack of sufficient information from the original meta-analysis authors, we lack the binary variable indicating whether the model had taken the subsample of teenagers, rather than the total population. We had gathered the information for all research papers considered but one. In result, we were missing one datapoint, which is the number of explanatory variables for Klerman’s study published in 1992, but we have managed to find that number by looking at the mean of this variable given in the original Card and Krueger paper.
 
-Card and Krueger originally looked at earlier meta-research, similarly as we are. They extended the previous study by an additional three papers. Looking for a direct specification of the models, rather than just for the coefficient is an exceptional effort. Most studies either show only the narrow results or they are impossible to find in an open source research aggregators such as e.g. JSTOR. Nevertheless, we have managed to find the details for two papers published after the Card and Krueger publication in 1995. To be more precise, we will enrich our analysis by adding paper by @bernstein2000impact as well as by @bazen2002looking. We have also looked for information on detailed model specification in other papers such as @williams2001minimum but we were unable to find sufficient information to support the analysis.
+Authors originally looked at earlier meta-research, similarly as we are. They extended the previous study by an additional three papers. Looking for a direct specification of the models, rather than just for the coefficient values is an exceptional effort. Most studies either show only the narrow results or they are not available to find in an open source research aggregators. Nevertheless, we have managed to find the details for two papers published after the Card and Krueger publication in 1995. To be more precise, we will enrich our analysis by adding paper by @bernstein2000impact as well as by @bazen2002looking. We have also looked for information on detailed model specification in other papers such as @williams2001minimum but we were unable to find sufficient information to support the analysis. First, we present the results of the reproduced original research, with the exclusion of teenager sub-sample variable.
 
+On the Figure 1, we present the reproduced results for the relationship between absolute t-statistics and square root of `df`. On the Figure 2, we present the estimated elasticities for employment compared to the standard error estimates.
+
+**\small Figure 1. Estimated t-statistics compared to Degrees of Freedom**
 ```{r, warning = F, message = F, echo = F, fig.align = 'center'}
-fig_1
+fig_1_old
 ```
 
+\begin{singlespace}
+\begin{scriptsize}
+Note: Presented sample is the one analysed by Card and Krueger. The fitted regression line is simple linear model with 95 pct. confidence intervals.
+  \end{scriptsize}
+  \end{singlespace}
+
+**\small Figure 2. Estimated Employment Elasticity compared to Standard Error Estimate**
+```{r, warning = F, message = F, echo = F, fig.align = 'center'}
+fig_2_old
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: Presented sample is the one analysed by Card and Krueger. The fitted regression line is simple linear model with 95 pct. confidence intervals.
+  \end{scriptsize}
+  \end{singlespace}
+
+
+We present the reproduced regressions in Table 1, in Appendix.
 
 # Extended Meta-Analysis
+
+**\small Figure 3. Estimated t-statistics compared to Degrees of Freedom (Extended)**
+```{r, warning = F, message = F, echo = F, fig.align = 'center'}
+fig_1_new
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: Presented sample is the one analysed by Card and Krueger extended by two additional studies published after the publication of the original meta-analysis. The fitted regression line is simple linear model with 95 pct. confidence intervals. Blue colour indicates the studies added to the reproduced original meta-analysis by Card and Krueger.
+  \end{scriptsize}
+  \end{singlespace}
+
+**\small Figure 4. Estimated Employment Elasticity compared to Standard Error Estimate (Extended)**
+```{r, warning = F, message = F, echo = F, fig.align = 'center'}
+fig_2_new
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: Presented sample is the one analysed by Card and Krueger extended by two additional studies published after the publication of the original meta-analysis. The fitted regression line is simple linear model with 95 pct. confidence intervals. Blue colour indicates the studies added to the reproduced original meta-analysis by Card and Krueger.
+  \end{scriptsize}
+  \end{singlespace}
 
 Add 2-5 newer studies, preferably using the selection process reported in the original study.
 
@@ -77,6 +122,50 @@ Present your findings and discuss them.
 # Conclusion
 
 Lorem Ipsum sit dolor amet
+
+\onecolumn
+
+# Appendix
+
+**\small Table 1. Regression Models for the Logarithm of Absolute t-statistics of Minimum Wage Emplyoment Effect**
+
+```{r, include = F}
+tbl1 = stargazer(model_1_old, model_2_old, model_3_old, type = 'latex', digits = 2, header = F)
+tbl1 = sub('^.+\\caption.+$','', tbl1)
+```
+
+```{r, echo = F, results = 'asis'}
+cat(tbl1, sep = '\n')
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: The sample used to estimate regression models is the same as in original meta-analysis by Card and Krueger. The binary variable for teenager sub-sample was removed, due to lack of information available to authors.
+  \end{scriptsize}
+  \end{singlespace}
+
+\twocolumn
+
+\onecolumn
+
+**\small Table 2. Regression Models for the Logarithm of Absolute t-statistics of Minimum Wage Emplyoment Effect (Extended)**
+
+```{r, include = F}
+tbl2 = stargazer(model_1_new, model_2_new, model_3_new, type = 'latex', digits = 2, header = F)
+tbl2 = sub('^.+\\caption.+$','', tbl2)
+```
+
+```{r, echo = F, results = 'asis'}
+cat(tbl2, sep = '\n')
+```
+
+\begin{singlespace}
+\begin{scriptsize}
+Note: The sample used to estimate regression models is the same as in original meta-analysis by Card and Krueger extended by two additional studies published after the publication of the original meta-analysis. The binary variable for teenager sub-sample was removed, due to lack of information available to authors.
+  \end{scriptsize}
+  \end{singlespace}
+
+\twocolumn
 
 # References
 
